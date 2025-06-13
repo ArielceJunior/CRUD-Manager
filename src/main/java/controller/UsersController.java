@@ -119,11 +119,13 @@ public class UsersController extends HttpServlet {
 		String userName = req.getParameter("name");
 		String userGender = req.getParameter("gender");
 		String userEMail = req.getParameter("mail");
+		String userPassword = req.getParameter("password");
 		
 		User user = new User();
 		user.setName(userName);
 		user.setGender(userGender);
 		user.setEmail(userEMail);
+		user.setPassword(userPassword);
 		
 		UserDAO dao = DAOFactory.createDAO(UserDAO.class);
 		
@@ -146,12 +148,13 @@ public class UsersController extends HttpServlet {
 		String userName = req.getParameter("name");
 		String userGender = req.getParameter("gender");
 		String userEMail = req.getParameter("mail");
+		String userPassword = req.getParameter("password");
 		
 		User user = loadUser(req);
 		user.setName(userName);
 		user.setGender(userGender);
 		user.setEmail(userEMail);
-		
+		user.setPassword(userPassword);
 		UserDAO dao = DAOFactory.createDAO(UserDAO.class);
 		
 		try {
